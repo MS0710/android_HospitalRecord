@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private static String[] PERMISSON_STORAGE = {"android.permission.READ_EXTERNAL_STORAGE",
             "android.permission.WRITE_EXTERNAL_STORAGE"};
     WritableWorkbook workbook;
-    // 创建工作表
+    // 創建工作表
     WritableSheet sheet;
     private ImageView img_main_clear;
     SharedPreferences sharedPref;
@@ -287,15 +287,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             if (view.getId() == R.id.btn_main_export){
-
-                /*String temp = sharedPref.getString("type","");
-                name = sharedPref.getString("name","");
-                Log.d(TAG, "onClick: temp = "+temp);
-                Log.d(TAG, "onClick: name = "+name);*/
-                /*String mContent = "阿锋真帅，阿锋真帅，阿锋真帅，重要的事情说三遍";
-                //String mPath ="/sdcard/data/data/";
-                String mPath ="/storage/emulated/0/Android/data/com.example.hospitalrecord_v1/cache/";
-                FileUtils.writeTxtToFile(mContent, mPath, "afeng.txt");*/
                 if(!edit_main_shitTime.getText().toString().isEmpty()){
                     shitTimes = Integer.parseInt(edit_main_shitTime.getText().toString());
                     ansFlag[10] = ""+shitTimes;
@@ -458,8 +449,6 @@ public class MainActivity extends AppCompatActivity {
         txt_main_path.setText(mPath);
         Log.d(TAG, "createExcel: path = "+mPath);
         try {
-            //workbook = Workbook.createWorkbook(new File("/storage/emulated/0/Android/data/com.example.hospitalrecord_v1/cache/data2.xls"));
-            //workbook = Workbook.createWorkbook(new File("/storage/emulated/0/Android/data/com.example.hospitalrecord_v1/data2.xls"));
             workbook = Workbook.createWorkbook(new File(mPath));
             sheet = workbook.createSheet("Sheet1", 0);
 
